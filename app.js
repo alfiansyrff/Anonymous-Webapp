@@ -11,7 +11,6 @@ const port = process.env.PORT || 3000;
 
 
 // SetUp EJS
-// Gunakan ejs 
 app.set('view engine', 'ejs');
 //Third Party Middleware
 app.use(expressLayouts);
@@ -19,7 +18,7 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 app.use(express.urlencoded({extended : true}));
 
-//Konfigurasi flash
+// SetUp Flash
 app.use(cokkieParser('secret'));
 app.use(session({
     cookie : {maxAge : 6000},
@@ -45,7 +44,7 @@ app.get('/', (req, res) => {
 // Halaman tambah pesan
 app.get('/pesan', (req, res) => {
     res.render('add-message', {
-        title : "Form Tambah Message",
+        title : "Halaman Tambah Pesan",
         layout : 'layouts/main-layout',
     });
 });
