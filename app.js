@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 //Third Party Middleware
 app.use(expressLayouts);
-//Built in middleware
+//Built in middleware   
 app.use(express.static('public'));
 app.use(express.urlencoded({extended : true}));
 
